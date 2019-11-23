@@ -1,0 +1,19 @@
+language: cpp
+dist: bionic
+
+install: 
+  # Required on bionic
+  - sudo apt update -qq
+  # Qt5
+  - sudo apt install -qq qt5-qmake qt5-default
+  # clang-tidy
+  - sudo apt-get install -qq clang clang-tidy
+
+script: 
+  # Build and run this project
+  - qmake
+  - make debug
+  - ./travis_qmake_gcc_cpp17_clang-tidy || true
+  # clang-tidy
+  - ./do_clang-tidy 2>/dev/null
+
