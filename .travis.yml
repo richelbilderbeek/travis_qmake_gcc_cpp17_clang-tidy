@@ -15,5 +15,5 @@ script:
   - make debug
   - ./travis_qmake_gcc_cpp17_clang-tidy || true
   # clang-tidy
-  - ./do_clang-tidy 2>/dev/null
+  - clang-tidy $(ls {*.cpp,*.h}) -- -std=c++17 2>/dev/null
 
