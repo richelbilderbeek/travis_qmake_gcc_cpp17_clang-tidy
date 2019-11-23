@@ -7,7 +7,7 @@ install:
   # Qt5
   - sudo apt install -qq qt5-qmake qt5-default
   # clang-tidy
-  - sudo apt-get install -qq clang clang-tidy
+  - sudo apt install -qq clang clang-tidy
 
 script: 
   # Build and run this project
@@ -15,5 +15,6 @@ script:
   - make debug
   - ./travis_qmake_gcc_cpp17_clang-tidy || true
   # clang-tidy
-  - clang-tidy $(ls {*.cpp,*.h}) -- -std=c++17 2>/dev/null
+  - clang-tidy $(ls *.cpp) --checks=cppcoreguidelines-* -- -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC
+  #- clang-tidy $(ls {*.cpp,*.h}) -- -std=c++17 2>/dev/null
 
