@@ -3,7 +3,7 @@
 
 int main() 
 {
-  static_assert(1 + 1 == 2); //C++17
+    static_assert(1 + 1 == 2); //C++17
   #ifdef NDEBUG
   #error Must use scan-build in debug mode
   #endif
