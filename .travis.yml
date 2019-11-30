@@ -13,8 +13,7 @@ script:
   # Build and run this project
   - qmake
   - make debug
-  - ./travis_qmake_gcc_cpp17_clang-tidy || true
+  - ./travis_qmake_gcc_cpp17_clang-tidy
   # clang-tidy
   - clang-tidy $(ls *.cpp) --checks=cppcoreguidelines-* -- -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC
-  #- clang-tidy $(ls {*.cpp,*.h}) -- -std=c++17 2>/dev/null
 
