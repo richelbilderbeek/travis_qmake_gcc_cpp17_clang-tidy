@@ -1,5 +1,13 @@
 #include <cassert>
 #include <iostream>
+int f()
+{
+std::cout << "Hello";
+ std::cout << "Hello";
+  std::cout << "Hello";
+   std::cout << "Hello";
+    std::cout << "Hello";
+}
 
 int main() 
 {
